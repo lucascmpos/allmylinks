@@ -1,6 +1,8 @@
 // @ts-nocheck
-import { useEffect, useState } from "react";
-import avatar from "./assets/avatar.png";
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import {
   Book,
   Github,
@@ -11,6 +13,8 @@ import {
   User,
 } from "lucide-react";
 import "./index.css";
+
+import avatar from "./assets/avatar.png";
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
@@ -33,8 +37,9 @@ function App() {
       } sm:${isLightMode ? "bg-mobile-light" : "bg-mobile-dark"}`}
     >
       <div className="flex items-center justify-center flex-col w-full gap-2">
-        <img
+        <LazyLoadImage
           src={avatar}
+          effect="blur"
           className={`rounded-full size-36 object-cover border-2 ${
             isLightMode ? "border-black/70" : "border-white/70"
           } `}
