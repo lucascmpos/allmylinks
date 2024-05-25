@@ -35,7 +35,7 @@ function App() {
       <div className="flex items-center justify-center flex-col gap-2">
         <img
           src={avatar}
-          className={`rounded-full   size-32 object-cover border-2 ${
+          className={`rounded-full size-36 object-cover border-2 ${
             isLightMode ? "border-black/70" : "border-white/70"
           } `}
         />
