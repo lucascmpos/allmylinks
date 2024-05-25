@@ -125,9 +125,7 @@ function App() {
           <Instagram />
           Instagram
         </a>
-        <a
-          href=""
-          target="_blank"
+        <button
           className={`py-3 px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
             isLightMode
               ? "bg-black/10 text-black border-black/40 hover:border-black"
@@ -136,7 +134,7 @@ function App() {
         >
           <Book />
           E-book (soon...)
-        </a>
+        </button>
       </div>
       <h3
         className={`font-semibold ${isLightMode ? "text-black" : "text-white"}`}
