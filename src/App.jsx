@@ -16,7 +16,6 @@ import "./index.css";
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
-  const [backgroundImage, setBackgroundImage] = useState("");
 
   const toggleTheme = () => {
     setIsLightMode((prevMode) => !prevMode);
@@ -40,38 +39,17 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const loadBackgroundImage = () => {
-      let imageUrl = "";
-      if (isLightMode) {
-        imageUrl = isMobile
-          ? "https://allmylinks.s3.amazonaws.com/bg-mobile-light.webp"
-          : "https://allmylinks.s3.amazonaws.com/bg-desktop-light.webp";
-      } else {
-        imageUrl = isMobile
-          ? "https://allmylinks.s3.amazonaws.com/bg-mobile.webp"
-          : "https://allmylinks.s3.amazonaws.com/bg-desktop.webp";
-      }
-
-      const img = new Image();
-      img.src = imageUrl;
-      img.onload = () => {
-        setBackgroundImage(imageUrl);
-      };
-    };
-
-    loadBackgroundImage();
-  }, [isLightMode, isMobile]);
-
   return (
     <div
-      className={`flex flex-col items-center min-h-[100vh] py-3 gap-6 justify-center ${
-        isLightMode ? "light-mode" : "dark-mode"
+      className={`flex flex-col items-center min-h-[100vh] py-3 gap-6 justify-center  ${
+        isLightMode
+          ? isMobile
+            ? "bg-mobile-light"
+            : "light-bg"
+          : isMobile
+          ? "bg-mobile-dark"
+          : "dark-bg"
       }`}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-      }}
     >
       <div className="flex items-center justify-center flex-col w-full gap-2">
         <LazyLoadImage
