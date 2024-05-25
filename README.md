@@ -1,8 +1,58 @@
-# React + Vite
+<h1 align="center">
+    <img src="https://ik.imagekit.io/4qca61gsh/mylinks.png?updatedAt=1716647213797">
+    
+   
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Link to the app
 
-Currently, two official plugins are available:
+[My Links](https://allmylinks-lucascampos.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🔍 Summary
+
+- [About](#-sobre)
+- [Tech Stack](#-tecnologias-utilizadas)
+- [How to download](#-como-baixar-o-projeto)
+
+## 📗 About
+
+A page where all my links are stored, with a dark theme and of course depending on the user's browser, responsive and modern design.
+
+---
+
+## 💻 Functionalities
+
+- Responsiveness (Mobile First)
+- Improved UI/UX
+- Light and dark theme
+
+---
+
+## 🚀 Technologies used
+
+The project was developed using the following technologies
+
+- React.js
+- JavaScript
+- Tailwind CSS
+- Figma
+
+---
+
+## 🎮 How to download
+
+```bash
+
+    # Clone the repository
+    $ git clone https://github.com/lucascmpos/allmylinks/
+
+    # Install the dependencies
+    $ npm i
+
+    # Started the project
+    $ npm run dev
+```
+
+---
+
+Developed by 🐉 Lucas Campos
