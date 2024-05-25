@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -13,8 +12,6 @@ import {
   User,
 } from "lucide-react";
 import "./index.css";
-
-import avatar from "./assets/avatar.png";
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
@@ -38,7 +35,7 @@ function App() {
     >
       <div className="flex items-center justify-center flex-col w-full gap-2">
         <LazyLoadImage
-          src={avatar}
+          src="https://allmylinks.s3.amazonaws.com/avatar.png"
           effect="blur"
           className={`rounded-full size-36 object-cover border-2 ${
             isLightMode ? "border-black/70" : "border-white/70"

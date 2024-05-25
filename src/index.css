@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 .bg-mobile-light {
-  background-image: url(./assets/bg-mobile-light.png);
+  background-image: url("https://allmylinks.s3.amazonaws.com/bg-mobile-light.png");
 }
 
 .bg-mobile-dark {
-  background-image: url(./assets/bg-mobile.png);
+  background-image: url("https://allmylinks.s3.amazonaws.com/bg-mobile.png");
 }
 
 .light-bg {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  background-image: url(./assets/bg-desktop-light.png);
+  background-image: url("https://allmylinks.s3.amazonaws.com/bg-desktop-light.png");
 }
 
 .dark-bg {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  background-image: url(./assets/bg-desktop.png);
+  background-image: url("https://allmylinks.s3.amazonaws.com/bg-desktop.png");
 }
 
 @keyframes slideFromLeft {
