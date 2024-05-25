@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-mobile-light {
+  background-image: url(./assets/bg-mobile-light.png);
+}
+
+.bg-mobile-dark {
+  background-image: url(./assets/bg-mobile.png);
+}
+
+.light-bg {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-image: url(./assets/bg-desktop-light.png);
+}
+
+.dark-bg {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-image: url(./assets/bg-desktop.png);
+}
+
+@keyframes slideFromLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 53%;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 53%;
+  }
+}
+
+.left-enter {
+  animation: slideFromLeft 0.2s ease forwards;
+}
+
+.right-enter {
+  animation: slideFromRight 0.2s ease forwards;
+}
