@@ -150,7 +150,7 @@ function App() {
       >
         Acesse{" "}
         <a
-          href=""
+          href="https://github.com/lucascmpos/allmylinks"
           target="_blank"
           className={`underline  cursor-pointer ${
             isLightMode ? "hover:text-black" : "hover:text-white"
