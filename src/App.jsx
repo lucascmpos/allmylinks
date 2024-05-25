@@ -31,7 +31,7 @@ function App() {
       setIsMobile(window.matchMedia("(max-width: 640px)").matches);
     };
 
-    handleResize(); // Check initially
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
