@@ -6,9 +6,9 @@ import {
   Github,
   Instagram,
   Linkedin,
-  MoonStar,
-  StickyNote,
+  Moon,
   SunMedium,
+  User,
 } from "lucide-react";
 import "./index.css";
 
@@ -28,30 +28,40 @@ function App() {
 
   return (
     <div
-      className={`flex flex-col w-screen items-center gap-10 justify-center h-screen ${
+      className={`flex flex-col items-center min-h-[100vh] py-3 gap-6 justify-center  ${
         isLightMode ? "light-bg" : "dark-bg"
       } sm:${isLightMode ? "bg-mobile-light" : "bg-mobile-dark"}`}
     >
-      <div className="flex items-center justify-center flex-col gap-2">
+      <div className="flex items-center justify-center flex-col w-full gap-2">
         <img
           src={avatar}
           className={`rounded-full size-36 object-cover border-2 ${
             isLightMode ? "border-black/70" : "border-white/70"
           } `}
         />
-        <span
-          className={` font-semibold ${
+        <p
+          className={` font-semibold text-xl mt-2 -mb-2 ${
             isLightMode ? "text-black" : "text-white"
+          }`}
+        >
+          Lucas Campos
+        </p>
+        <span
+          className={` text-sm font-semibold ${
+            isLightMode ? "text-black/50" : "text-white/50"
           }`}
         >
           @lucascmpos
         </span>
         <span
-          className={` text-xl font-bold ${
-            isLightMode ? "text-black" : "text-white"
+          className={` text-md font-semibold  ${
+            isLightMode ? "text-black/70" : "text-white/70"
           }`}
         >
-          Web Developer 💻
+          💻 2 years of experience as Web Developer
+          <br /> 🎓 Graduated in Information Security <br /> 🔧 Technician in
+          Internet Computing <br /> 💼 Looking for new opportunities <br /> 💪
+          Gym lover
         </span>
       </div>
       <div className="relative  m-1">
@@ -59,18 +69,18 @@ function App() {
           onClick={toggleTheme}
           className={`w-16 h-6 rounded-full group  border-2 transition-all duration-300  backdrop-filter-none backdrop-blur-3xl flex items-center ${
             isLightMode
-              ? "border-gray-500 bg-black/15 hover:border-white "
-              : "border-white bg-white/15 hover:border-black"
+              ? "border-gray-500 bg-black/15 hover:border-blue-900 "
+              : "border-white bg-white/15 hover:border-blue-400"
           }`}
         >
           <button
             className={`w-8 h-8 absolute transition-all duration-300  transform top-3 -translate-y-1/2 z-10  border-0 rounded-full flex justify-center items-center ${
               isLightMode
-                ? "right-enter bg-black text-white group-hover:bg-white group-hover:text-black"
-                : "left-enter bg-white text-black group-hover:bg-black group-hover:text-white"
+                ? "right-enter bg-black text-white group-hover:bg-blue-900 group-hover:text-yellow-400"
+                : "left-enter bg-white text-black group-hover:bg-blue-400 group-hover:text-yellow-300"
             }`}
           >
-            {isLightMode ? <MoonStar size={20} /> : <SunMedium size={20} />}
+            {isLightMode ? <Moon size={20} /> : <SunMedium size={20} />}
           </button>
         </button>
       </div>
@@ -79,74 +89,74 @@ function App() {
         <a
           href="https://lucascmpos-portfolio.vercel.app/"
           target="_blank"
-          className={`py-3 px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
+          className={`py-3 group px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
             isLightMode
               ? "bg-black/10 text-black border-black/40 hover:border-black"
               : "bg-white/10 text-white border-white/40 hover:border-white"
           }`}
         >
-          <StickyNote />
+          <User className="group-hover:scale-110 group-hover:text-purple-700 transition-all  duration-300" />
           Portfolio
         </a>
 
         <a
           href="https://github.com/lucascmpos"
           target="_blank"
-          className={`py-3 px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
+          className={`py-3 group px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
             isLightMode
               ? "bg-black/10 text-black border-black/40 hover:border-black"
               : "bg-white/10 text-white border-white/40 hover:border-white"
           }`}
         >
-          <Github />
+          <Github className="group-hover:scale-110 group-hover:text-[#24292e] transition-all duration-300" />
           GitHub
         </a>
         <a
           href="https://www.linkedin.com/in/lucas-campos81/"
           target="_blank"
-          className={`py-3 px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
+          className={`py-3 group px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
             isLightMode
               ? "bg-black/10 text-black border-black/40 hover:border-black"
               : "bg-white/10 text-white border-white/40 hover:border-white"
           }`}
         >
-          <Linkedin />
+          <Linkedin className="group-hover:scale-110 group-hover:text-[#0e76a8] transition-all duration-300" />
           LinkedIn
         </a>
         <a
           href="https://www.instagram.com/lucas.cmpos/"
           target="_blank"
-          className={`py-3 px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
+          className={`py-3 group px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
             isLightMode
               ? "bg-black/10 text-black border-black/40 hover:border-black"
               : "bg-white/10 text-white border-white/40 hover:border-white"
           }`}
         >
-          <Instagram />
+          <Instagram className="group-hover:scale-110 group-hover:text-[#C13584] transition-all duration-300" />
           Instagram
         </a>
         <button
-          className={`py-3 px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
+          className={`py-3 group px-10 flex flex-row gap-2 justify-center rounded-lg border-2 ${
             isLightMode
               ? "bg-black/10 text-black border-black/40 hover:border-black"
               : "bg-white/10 text-white border-white/40 hover:border-white"
           }`}
         >
-          <Book />
+          <Book className="group-hover:scale-110 transition-all duration-300" />
           E-book (soon...)
         </button>
       </div>
       <h3
         className={`font-semibold ${isLightMode ? "text-black" : "text-white"}`}
       >
-        Feito por Lucas Campos
+        Made by Lucas Campos
       </h3>
       <span
         className={`font-semibold text-sm ${
           isLightMode ? "text-black/50 " : "text-white/50"
         }`}
       >
-        Acesse{" "}
+        Acess{" "}
         <a
           href="https://github.com/lucascmpos/allmylinks"
           target="_blank"
@@ -154,9 +164,9 @@ function App() {
             isLightMode ? "hover:text-black" : "hover:text-white"
           }`}
         >
-          aqui
+          here
         </a>{" "}
-        o repositório dessa página.
+        this page repository.
       </span>
     </div>
   );
