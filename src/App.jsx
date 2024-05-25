@@ -15,6 +15,7 @@ import "./index.css";
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleTheme = () => {
     setIsLightMode((prevMode) => !prevMode);
@@ -25,17 +26,34 @@ function App() {
       "(prefers-color-scheme: dark)"
     ).matches;
     setIsLightMode(!prefersDarkMode);
+
+    const handleResize = () => {
+      setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+    };
+
+    handleResize(); // Check initially
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
     <div
       className={`flex flex-col items-center min-h-[100vh] py-3 gap-6 justify-center  ${
-        isLightMode ? "light-bg" : "dark-bg"
-      } sm:${isLightMode ? "bg-mobile-light" : "bg-mobile-dark"}`}
+        isLightMode
+          ? isMobile
+            ? "bg-mobile-light"
+            : "light-bg"
+          : isMobile
+          ? "bg-mobile-dark"
+          : "dark-bg"
+      }`}
     >
       <div className="flex items-center justify-center flex-col w-full gap-2">
         <LazyLoadImage
-          src="https://allmylinks.s3.amazonaws.com/avatar.png"
+          src="https://allmylinks.s3.amazonaws.com/avatar.webp"
           effect="blur"
           className={`rounded-full size-36 object-cover border-2 ${
             isLightMode ? "border-black/70" : "border-white/70"
