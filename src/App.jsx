@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -16,6 +15,7 @@ import "./index.css";
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const toggleTheme = () => {
     setIsLightMode((prevMode) => !prevMode);
@@ -34,10 +34,30 @@ function App() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    const backgroundImage = new Image();
+    backgroundImage.src = isLightMode
+      ? isMobile
+        ? "https://allmylinks.s3.amazonaws.com/bg-mobile-light.webp"
+        : "https://allmylinks.s3.amazonaws.com/bg-desktop-light.webp"
+      : isMobile
+      ? "https://allmylinks.s3.amazonaws.com/bg-mobile.webp"
+      : "https://allmylinks.s3.amazonaws.com/bg-desktop.webp";
+    backgroundImage.onload = () => {
+      setLoading(false);
+    };
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isLightMode, isMobile]);
+
+  if (loading) {
+    return (
+      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-white"></div>
+      </div>
+    );
+  }
 
   return (
     <div

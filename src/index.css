@@ -30,6 +30,14 @@
   background-image: url("https://allmylinks.s3.amazonaws.com/bg-desktop.webp");
 }
 
+.bg-hidden {
+  visibility: hidden;
+}
+
+.bg-visible {
+  visibility: visible;
+}
+
 @keyframes slideFromLeft {
   0% {
     left: 0;
